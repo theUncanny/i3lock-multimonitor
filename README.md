@@ -22,9 +22,16 @@ Copy the `lock` script along with the images to some place on your system (e.g.:
 git clone https://github.com/shikherverma/i3lock-multimonitor.git
 cp -r i3lock-multimonitor ~/.i3
 chmod +x ~/.i3/i3lock-multimonitor/lock
+sudo ln -sfn ~/.i3/i3lock-multimonitor/lock /usr/local/bin/lock-multimonitor
 ```
 Create a key binding on your i3 config file (in this example I'm using $mod+p):
 ```
 echo "bindsym \$mod+p exec /home/$USER/.i3/i3lock-multimonitor/lock" >> ~/.i3/config
 ```
 Now reload the i3 configuration file. By default, the key binding is `$mod+Shift+c`.
+
+Use on CLI (example):
+
+```
+lock-multimonitor -i "${HOME}/Wallpapers/Varios/programming-1516205757967-4762.jpg"
+```
